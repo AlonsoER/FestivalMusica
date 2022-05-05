@@ -5,6 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 
 // IMAGENES
+const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp');
 
 function css( done ) {

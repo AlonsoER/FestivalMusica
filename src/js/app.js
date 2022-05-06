@@ -4,6 +4,36 @@ document.addEventListener('DOMContentLoaded', function(){ // Inicializo la funci
 
 function iniciarApp(){ // Esta funcion inicializa la funcion de crearGaleria
     crearGaleria();
+    scrollNav();
+    navegacionFija();
+}
+
+// Esta funcion hace que el cuando precione un boton de la barra de nav haga una animacion mas buena
+function scrollNav(){
+    const enlaces = document.querySelectorAll('.navegacion-principal a');
+    enlaces.forEach( enlace => {
+        enlace.addEventListener('click', function(e){
+            e.preventDefault();
+            const seccion = document.querySelector(e.target.attributes.href.value);
+            seccion.scrollIntoView( {behavior: "smooth"});
+        });
+    });
+}
+
+function navegacionFija(){
+    const barra = document.querySelector('.header');
+    const sobreFestival = document.querySelector('.sobre-festival');
+    const body = document.querySelector('body');
+
+    window.addEventListener('scroll', function(){
+        if(sobreFestival.getBoundingClientRect().top < 0){
+            barra.classList.add('fijo');
+            body.classList.add('body-scroll');
+        }else{
+            barra.classList.remove('fijo');
+            body.classList.remove('body-scroll');
+        }
+    });
 }
 
 function crearGaleria(){ // Creo la funcion que va a crear la galeria

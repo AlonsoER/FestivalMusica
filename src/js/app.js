@@ -16,6 +16,6 @@ function crearGaleria(){ // Creo la funcion que va a crear la galeria
         <source srcset="build/img/thumb/${i}.webp" type="image/webp">
         <img loading="lazy" width="200" height="300" src="build/img/thumb/${i}.jpg" alt="Imagen galeria">
         `; // Este codigo HTML accede a la ruta donde se encuentra la imagen y selecciona la mejor opcion ya sea .AVIF, .WEBP o JPG
-        galeria.appendChild(imagen); // la constante de galeria almacena los datos de la constante imagen y este los muestra en la pagina
+        galeria.appendChild(imagen); // La constante de galeria almacena los datos de la constante imagen y este los muestra en la pagina
     }
 }
